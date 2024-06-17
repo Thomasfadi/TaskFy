@@ -1,3 +1,5 @@
+
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class AddTask extends StatelessWidget {
@@ -19,17 +21,31 @@ class AddTask extends StatelessWidget {
         children: [
           Text("Add a Task",
           style: TextStyle(
-            
             fontSize: 25,
             fontWeight:FontWeight.w900 ,
-            color: Color.fromARGB(232, 19, 37, 52),
+            color:Color.fromARGB(255, 24, 36, 58),
           ),
           ),
           TextField(
             cursorColor: Color.fromARGB(255, 0, 71, 129),
-            cursorErrorColor: Colors.red[900],
+            autofocus: true,
           ),
-        ],
+         ElevatedButton.icon(
+  style: ButtonStyle(
+    backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 24, 36, 58)),
+    iconColor: MaterialStateProperty.all(Colors.white),
+    iconSize: MaterialStateProperty.all(20),
+  ),
+  onPressed: () {
+    // Your onPressed function here
+  },
+  icon: Icon(Icons.add,),
+  label: Text("Add",style: TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.bold
+  ),),
+),
+      ],
       ),
     ), 
     );
