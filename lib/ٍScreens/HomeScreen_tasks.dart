@@ -15,8 +15,13 @@ class TasksHomeScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          showModalBottomSheet(context: context, builder: (context)=>AddTask());
-        },// this is the function of the poping 
+          showModalBottomSheet(
+            isScrollControlled: true,
+            context: context,
+            builder: (context)=>SingleChildScrollView(child: Container(
+            padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+            child: AddTask())));
+        },// this is the function of the poping the screen  of add Task Screen 
         backgroundColor: Color.fromARGB(255, 24, 36, 58),
         child: Icon(Icons.add,color: const Color.fromARGB(255, 255, 255, 255),
         ),
